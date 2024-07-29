@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
- // porque user es una entidad en mi bd que debe ser mapeada
 @Data
 @NoArgsConstructor
 @Entity(name = "users")
