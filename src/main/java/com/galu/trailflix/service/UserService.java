@@ -9,11 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class UserService implements IUserInterface{
     @Autowired
     private UserRepository userRepository;
 
     public User createUser(User user) {
+        // verificar que el username no exista
         return userRepository.save(user);
     }
 
