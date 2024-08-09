@@ -1,3 +1,5 @@
 # Trailflix
 
-Proyecto de Springboot
+Springboot proyect
+
+See docs [here](src/docs)
