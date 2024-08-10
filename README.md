@@ -2,4 +2,4 @@
 
 Springboot proyect
 
-See docs [here](src/docs)
+See docs [here](docs)
