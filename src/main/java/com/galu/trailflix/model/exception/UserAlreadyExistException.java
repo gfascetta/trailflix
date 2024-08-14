@@ -1,7 +1,9 @@
 package com.galu.trailflix.model.exception;
 
-public class UserAlreadyExistException extends RuntimeException {
+import com.galu.trailflix.model.User;
+
+public class UserAlreadyExistException extends EntityAlreadyExistException {
     public UserAlreadyExistException(String username) {
-        super(String.format("User %s already exists", username));
+        super(User.class.getSimpleName(), username);
     }
 }

@@ -2,10 +2,9 @@ package com.galu.trailflix.controllers;
 
 import com.galu.trailflix.dto.UserCreateRequestDTO;
 import com.galu.trailflix.dto.UserResponseDTO;
-import com.galu.trailflix.model.User;
-import com.galu.trailflix.model.exception.RequestDTOInvalidException;
 import com.galu.trailflix.service.IUserService;
 import com.galu.trailflix.translator.UserTranslator;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,10 +20,7 @@ public class UserController {
     private IUserService userService;
 
     @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody UserCreateRequestDTO userRequestDTO) {
-        if (!userRequestDTO.isValid()){
-            throw new RequestDTOInvalidException(userRequestDTO.username());
-        }
+    public ResponseEntity<?> createUser(@Valid @RequestBody UserCreateRequestDTO userRequestDTO) {
         var user = userService.createUser(UserTranslator.mapToNewUser(userRequestDTO));
         return new ResponseEntity<>(UserTranslator.mapToUserResponseDTO(user), HttpStatus.OK);
     }
