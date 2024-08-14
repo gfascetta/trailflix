@@ -18,12 +18,17 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastname;
     @Column(unique = true, nullable = false)
     private String username;
-    private String password; //  TODO: NO PUEDE SER NULL
+    @Column(nullable = false)
+    private String password;
     private LocalDate birthDate;
-    private LocalDateTime registerDate; // TODO: NO PUEDE SER NULL
-    private LocalDateTime lastUpdate; //  TODO: NO PUEDE SER NULL
+    @Column(nullable = false)
+    private LocalDateTime registerDate;
+    @Column(nullable = false)
+    private LocalDateTime lastUpdate;
 }
