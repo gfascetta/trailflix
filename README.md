@@ -1,5 +1,7 @@
 # Trailflix
 
-Springboot proyect
+Springboot proyect. 
 
-See docs [here](docs)
+To run this application, JDK 22 is required.
+
+See docs [here](src/docs)
